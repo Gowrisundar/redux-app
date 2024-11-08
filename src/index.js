@@ -157,7 +157,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux'
-import {store} from './calculator/store/config.dev'
+import { store } from './bankProject/store/config.dev';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

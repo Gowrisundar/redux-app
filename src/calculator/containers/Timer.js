@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 
-const Timer = () => {
+function Timer() {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {//ComponentDidMount
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+        return () => clearInterval(interval); //componentWillUnmount
+  }, []);
+
   return (
-    <div>
-        <h4>Current Time: {new Date().toDateString} </h4>
+    <div className="bg-dark text-warning text-center">
+    
+      <h4>Time now : {currentTime.toLocaleTimeString()}</h4>
     </div>
-  )
+  );
 }
 
-export default Timer
+export default Timer;
